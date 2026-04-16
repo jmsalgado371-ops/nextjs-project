@@ -29,12 +29,12 @@ const ContactSection = () => {
                 </h3>
                 <p className="text-white">
                   <a
-                    href="https://github.com/yourusername"
+                    href="https://github.com/jmsalgado371-ops"
                     target="_blank"
                     rel="noreferrer"
                     className="transition duration-200 hover:text-opacity-75"
                   >
-                    github.com/yourusername
+                    github.com/jmsalgado371-ops
                   </a>
                 </p>
               </div>

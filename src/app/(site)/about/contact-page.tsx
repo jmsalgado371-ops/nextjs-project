@@ -23,24 +23,26 @@ const ContactPage = () => {
                   </h3>
                   <p className="text-white">
                     <a
-                      href="mailto:contact@example.com"
+                      href="mailto:jmsalgado371@gmail.com"
                       className="hover:text-opacity-75 transition duration-200"
                     >
-                      contact@example.com
+                      jmsalgado371@gmail.com
                     </a>
                   </p>
                 </div>
 
                 <div>
                   <h3 className="mb-2 text-sm font-semibold uppercase tracking-wider text-white/80">
-                    Phone
+                    GitHub
                   </h3>
                   <p className="text-white">
                     <a
-                      href="tel:+1234567890"
+                      href="https://github.com/jmsalgado371-ops"
+                      target="_blank"
+                      rel="noreferrer"
                       className="hover:text-opacity-75 transition duration-200"
                     >
-                      +1 (234) 567-890
+                      github.com/jmsalgado371-ops
                     </a>
                   </p>
                 </div>

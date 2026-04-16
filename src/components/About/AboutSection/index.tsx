@@ -265,20 +265,15 @@ const AboutSection = () => {
           </div>
 
           <div className="rounded-[30px] border border-white/10 bg-white/5 p-8">
-            <h3 className="mb-6 text-2xl font-semibold text-white">Education & Contact</h3>
+            <h3 className="mb-6 text-2xl font-semibold text-white">Contact</h3>
             <div className="space-y-5 text-white/80">
-              <div>
-                <p className="font-semibold text-white">Bachelor&apos;s in Computer Science</p>
-                <p className="text-sm text-slate-400">Completed 2019</p>
-                <p className="mt-2">Focused on software engineering, algorithms, and user interface development.</p>
-              </div>
               <div id="contact">
                 <p className="font-semibold text-white">Contact</p>
                 <p className="mt-2">
-                  Email: <a href="mailto:youremail@example.com" className="text-sky-400 hover:text-sky-300">youremail@example.com</a>
+                  Email: <a href="mailto:jmsalgado371@gmail.com" className="text-sky-400 hover:text-sky-300">jmsalgado371@gmail.com</a>
                 </p>
                 <p className="mt-2">
-                  GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" className="text-sky-400 hover:text-sky-300">github.com/yourusername</a>
+                  GitHub: <a href="https://github.com/jmsalgado371-ops" target="_blank" rel="noreferrer" className="text-sky-400 hover:text-sky-300">github.com/jmsalgado371-ops</a>
                 </p>
               </div>
             </div>
