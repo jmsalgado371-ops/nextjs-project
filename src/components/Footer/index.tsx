@@ -7,7 +7,7 @@ import { companiesLink, productsLink, supportsLink } from "./linksData";
 const Footer = () => {
   return (
     <>
-      <footer className="relative z-10 pb-17.5 lg:pb-22.5 xl:pb-27.5">
+      <footer className="relative z-10 pb-17.5 text-white lg:pb-22.5 xl:pb-27.5">
         {/* <!-- bg shapes --> */}
         <div className="absolute bottom-0 left-0 -z-1 flex w-full flex-col gap-3 opacity-50">
           <div className="footer-bg-gradient h-[1.24px] w-full"></div>
