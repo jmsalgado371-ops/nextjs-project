@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={plusJakarta.className}>
-      <body className='relative min-h-screen'>
+      <body className='relative min-h-screen text-white'>
         <div className='isolate relative'>
           <div className='pointer-events-none absolute inset-0 z-0'>
             <FallingPattern
