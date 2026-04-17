@@ -1,15 +1,33 @@
 <svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-  <g fill="#1A3A3A" font-family="system-ui, -apple-system, sans-serif">
-    <circle cx="200" cy="80" r="65" fill="none" stroke="#1A3A3A" stroke-width="6"/>
-    <path d="M150 65 L135 80 L150 95" fill="none" stroke="#1A3A3A" stroke-width="5" stroke-linecap="round"/>
-    <path d="M250 65 L265 80 L250 95" fill="none" stroke="#1A3A3A" stroke-width="5" stroke-linecap="round"/>
-    <text x="200" y="100" font-size="55" font-weight="900" text-anchor="middle" letter-spacing="-2">JS</text>
+  <!-- White keyline layer to preserve legibility on dark backgrounds -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <circle cx="200" cy="80" r="70" />
+    <path d="M152 74 L144 80 L152 86" stroke-width="9" />
+    <path d="M248 74 L256 80 L248 86" stroke-width="9" />
+    <path d="M185 55 L185 95 L170 105 L158 95" stroke-width="12" stroke-linejoin="bevel" />
+    <path d="M225 55 L200 55 L200 80 L225 80 L225 105 L200 105" stroke-width="12" stroke-linejoin="bevel" />
+  </g>
 
-    <g transform="translate(0, 30)">
-      <text x="200" y="175" font-size="26" font-weight="bold" text-anchor="middle">JOS&#201; SALGADO</text>
-      <text x="200" y="205" font-size="13" text-anchor="middle" font-weight="400" letter-spacing="4" opacity="0.8">SOFTWARE DEVELOPER</text>
-      <circle cx="70" cy="166" r="3.5"/>
-      <circle cx="330" cy="166" r="3.5"/>
-    </g>
+  <g fill="none" stroke="#1A3A3A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="200" cy="80" r="70" />
+    <path d="M152 74 L144 80 L152 86" stroke-width="5" />
+    <path d="M248 74 L256 80 L248 86" stroke-width="5" />
+    <path d="M185 55 L185 95 L170 105 L158 95" stroke-width="8" stroke-linejoin="bevel" />
+    <path d="M225 55 L200 55 L200 80 L225 80 L225 105 L200 105" stroke-width="8" stroke-linejoin="bevel" />
+  </g>
+
+  <!-- White underlay behind text to keep contrast over mixed backgrounds -->
+  <g fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-linecap="round" opacity="0.95">
+    <text x="200" y="185" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="1" stroke-width="7">JOS&#201; SALGADO</text>
+    <text x="200" y="215" font-size="14" text-anchor="middle" font-weight="400" letter-spacing="5" opacity="0.8" stroke-width="5">SOFTWARE DEVELOPER</text>
+    <circle cx="55" cy="176" r="7" />
+    <circle cx="345" cy="176" r="7" />
+  </g>
+
+  <g fill="#1A3A3A" font-family="system-ui, -apple-system, sans-serif">
+    <text x="200" y="185" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="1">JOS&#201; SALGADO</text>
+    <text x="200" y="215" font-size="14" text-anchor="middle" font-weight="400" letter-spacing="5" opacity="0.8">SOFTWARE DEVELOPER</text>
+    <circle cx="55" cy="176" r="3.5" />
+    <circle cx="345" cy="176" r="3.5" />
   </g>
 </svg>
