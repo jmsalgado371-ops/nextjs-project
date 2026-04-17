@@ -2,32 +2,28 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import badgesData from "./badgesData";
 
 const technicalSkills = [
   {
     title: "HTML",
-    description:
-      "Semantic page structure and accessible markup for production websites.",
+    description: "Semantic structure and accessibility-focused page markup.",
   },
   {
     title: "CSS",
-    description:
-      "Responsive layouts, modern styling systems, and polished UI presentation.",
+    description: "Responsive layouts, component styling, and modern UI polish.",
   },
   {
     title: "JavaScript",
-    description:
-      "Interactive frontend logic, reusable components, and dynamic behavior.",
+    description: "Interactive behavior and scalable frontend logic patterns.",
   },
   {
     title: "ReactJS",
-    description:
-      "Component-driven application development with clean state management patterns.",
+    description: "Reusable component architecture and state-driven interfaces.",
   },
   {
     title: "AWS Solutions Architect",
-    description:
-      "Cloud architecture fundamentals, scalable infrastructure planning, and deployment readiness.",
+    description: "Cloud architecture fundamentals and deployment planning.",
   },
 ];
 
@@ -35,7 +31,7 @@ const AboutSection = () => {
   const [activeSkillIndex, setActiveSkillIndex] = useState(0);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 640px) and (max-width: 1023px)");
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
 
     const startAutoplay = () => {
       if (!mediaQuery.matches) {
@@ -46,7 +42,7 @@ const AboutSection = () => {
         setActiveSkillIndex((currentIndex) =>
           currentIndex === technicalSkills.length - 1 ? 0 : currentIndex + 1,
         );
-      }, 3500);
+      }, 3200);
     };
 
     let intervalId = startAutoplay();
@@ -126,87 +122,89 @@ const AboutSection = () => {
 
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
           <div className="rounded-[30px] border border-white/10 bg-white/5 p-6 sm:p-7 lg:p-8">
-            <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mb-6">
               <h3 className="text-2xl font-semibold text-white">Technical Skill Highlights</h3>
-
-              <div className="hidden items-center gap-2 sm:flex lg:hidden">
-                <button
-                  type="button"
-                  onClick={showPreviousSkill}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
-                  aria-label="Show previous technical skill"
-                >
-                  <span aria-hidden="true">&larr;</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={showNextSkill}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
-                  aria-label="Show next technical skill"
-                >
-                  <span aria-hidden="true">&rarr;</span>
-                </button>
-              </div>
+              <p className="mt-2 text-white/70">
+                Swipe through technical highlights on mobile and review credential badges below.
+              </p>
             </div>
 
-            <div className="grid gap-4 sm:hidden">
-              {technicalSkills.map((skill, index) => (
-                <div
-                  key={skill.title}
-                  className="rounded-2xl border border-white/10 bg-black/20 p-4"
-                >
-                  <p className="text-sm uppercase tracking-[0.2em] text-sky-300">{skill.title}</p>
-                  <p className="mt-2 text-white/80">{skill.description}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="hidden sm:block lg:hidden">
-              <div className="mx-auto max-w-[32rem] overflow-hidden rounded-3xl">
+            <div className="mb-6 sm:hidden">
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-5">
                 <div
                   className="flex transition-transform duration-300 ease-out"
                   style={{ transform: `translateX(-${activeSkillIndex * 100}%)` }}
                 >
                   {technicalSkills.map((skill) => (
                     <div key={skill.title} className="w-full flex-none">
-                      <div className="rounded-2xl border border-white/10 bg-black/20 p-5 sm:p-6">
-                        <p className="break-words text-sm uppercase tracking-[0.16em] text-sky-300">{skill.title}</p>
-                        <p className="mt-3 text-white/80">{skill.description}</p>
-                      </div>
+                      <p className="text-sm uppercase tracking-[0.2em] text-sky-300">{skill.title}</p>
+                      <p className="mt-2 text-white/80">{skill.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-5 flex items-center justify-center gap-2">
-                {technicalSkills.map((skill, index) => (
-                  <button
-                    key={skill.title}
-                    type="button"
-                    onClick={() => setActiveSkillIndex(index)}
-                    className={`h-2.5 rounded-full transition ${
-                      activeSkillIndex === index
-                        ? "w-8 bg-sky-300"
-                        : "w-2.5 bg-white/25 hover:bg-white/45"
-                    }`}
-                    aria-label={`Show ${skill.title} skill card`}
-                  />
-                ))}
+              <div className="mt-4 flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={showPreviousSkill}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white transition hover:bg-white/10"
+                  aria-label="Show previous technical skill"
+                >
+                  Prev
+                </button>
+                <div className="flex items-center gap-2">
+                  {technicalSkills.map((skill, index) => (
+                    <button
+                      key={skill.title}
+                      type="button"
+                      onClick={() => setActiveSkillIndex(index)}
+                      className={`h-2.5 rounded-full transition ${
+                        activeSkillIndex === index
+                          ? "w-8 bg-sky-300"
+                          : "w-2.5 bg-white/25 hover:bg-white/45"
+                      }`}
+                      aria-label={`Show ${skill.title} skill card`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={showNextSkill}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white transition hover:bg-white/10"
+                  aria-label="Show next technical skill"
+                >
+                  Next
+                </button>
               </div>
             </div>
 
-            <div className="hidden gap-4 lg:grid lg:grid-cols-2">
-              {technicalSkills.map((skill, index) => (
-                <div
-                  key={skill.title}
-                  className={`rounded-2xl border border-white/10 bg-black/20 p-4 ${
-                    index === technicalSkills.length - 1 ? "lg:col-span-2" : ""
-                  }`}
+            <div className="grid gap-3 max-sm:hidden sm:grid-cols-2">
+              {badgesData.map((badge) => (
+                <article
+                  key={badge.id}
+                  className="rounded-xl border border-white/10 bg-black/20 p-4"
                 >
-                  <p className="text-sm uppercase tracking-[0.2em] text-sky-300">{skill.title}</p>
-                  <p className="mt-2 text-white/80">{skill.description}</p>
-                </div>
+                  <p className="text-sm font-semibold text-white">{badge.name}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-sky-300">
+                    {badge.issuer}
+                  </p>
+                </article>
               ))}
+            </div>
+
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-slate-300">Footer Badges</p>
+              <div className="flex flex-wrap gap-2">
+                {badgesData.map((badge) => (
+                  <span
+                    key={`${badge.id}-pill`}
+                    className="rounded-full border border-sky-400/30 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-200"
+                  >
+                    {badge.name}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
