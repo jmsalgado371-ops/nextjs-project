@@ -51,9 +51,10 @@ const Header = () => {
           navigationOpen ? "overflow-visible" : "overflow-hidden"
         } ${
           stickyMenu
-            ? "before:features-row-border bg-dark/70 py-4! shadow-sm backdrop-blur-lg transition duration-100 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full lg:py-0!"
+            ? "before:features-row-border py-4! shadow-sm backdrop-blur-lg transition duration-100 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full lg:py-0!"
             : "py-7 lg:py-0"
         }`}
+        style={{ backgroundColor: '#1a1f2e' }}
       >
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(134,70,244,0.18),_transparent_23%),radial-gradient(circle_at_top_right,_rgba(59,130,246,0.14),_transparent_30%)]" />

@@ -12,15 +12,15 @@ export default async function DocsLayout({ children, params }: DocsLayoutProps) 
 
   getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
 
+  if (!showSidebar) {
+    return <>{children}</>;
+  }
+
   return (
-    <div className={`mx-auto grid max-w-[1170px] gap-x-8 gap-y-4 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 ${
-      showSidebar ? "lg:grid-cols-[auto_1fr]" : ""
-    }`}>
-      {showSidebar && (
-        <aside className='max-h-fit lg:sticky lg:top-[80px]'>
-          <SidebarLink />
-        </aside>
-      )}
+    <div className={`mx-auto grid max-w-[1170px] gap-x-8 gap-y-4 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 lg:grid-cols-[auto_1fr]`}>
+      <aside className='max-h-fit lg:sticky lg:top-[80px]'>
+        <SidebarLink />
+      </aside>
 
       <main className='prose prose-invert rounded-lg bg-white/5 px-8 py-11 sm:p-[55px] lg:px-8 xl:p-[55px]'>
         {children}
