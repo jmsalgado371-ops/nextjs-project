@@ -11,7 +11,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-const logo = "/images/logo/jose-salgado-logo-clear.png";
+const logo = "/salgado-logo.png";
 import menuData from "./menuData";
 
 const hasActiveSubmenu = (submenu?: typeof menuData[number]["submenu"], pathUrl?: string) =>
@@ -64,16 +64,16 @@ const Header = () => {
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/20 to-transparent" />
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-[1170px] items-center justify-between px-4 sm:px-8 xl:px-0">
+        <div className="relative mx-auto flex w-full max-w-[1170px] items-center gap-4 px-4 sm:px-8 xl:gap-6 xl:px-0">
           {/* Logo - Far Left */}
-          <div className="flex flex-shrink-0 items-center">
+          <div className="flex shrink-0 items-center">
             <Link href="/">
               <Image
                 src={logo}
                 alt="Salgado Logo"
-                width={164}
-                height={36}
-                className="h-auto w-[164px] object-contain opacity-95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.28)]"
+                width={172}
+                height={42}
+                className="h-auto w-[138px] object-contain opacity-90 saturate-75 brightness-110 drop-shadow-[0_3px_14px_rgba(5,8,20,0.45)] sm:w-[154px] xl:w-[172px]"
                 priority
               />
             </Link>
@@ -81,18 +81,18 @@ const Header = () => {
 
           {/* Desktop navbar */}
           <div
-            className={`hidden items-center xl:flex ${
+            className={`hidden flex-1 items-center justify-center xl:flex ${
               navigationOpen
                 ? "visible! relative mt-4 h-auto! max-h-[400px] overflow-y-scroll rounded-md bg-dark p-7.5 shadow-lg"
                 : ""
             }`}
           >
-            <Menubar className="flex justify-center border-none bg-transparent">
+            <Menubar className="flex w-full max-w-max items-center justify-center gap-1 border-none bg-transparent">
               {menuData.map((menuItem, key) => (
                 <MenubarMenu key={key}>
                   {menuItem.submenu ? (
                     <>
-                      <MenubarTrigger className={`hover:nav-gradient relative border border-transparent px-4 py-1.5 text-sm hover:text-white ${
+                      <MenubarTrigger className={`hover:nav-gradient relative border border-transparent px-4 py-2 text-sm hover:text-white ${
                         pathUrl === menuItem.path
                           ? "nav-gradient text-white"
                           : "text-white/80"
@@ -117,7 +117,7 @@ const Header = () => {
                     <MenubarTrigger asChild>
                       <Link
                         href={`${menuItem.path}`}
-                        className={`hover:nav-gradient relative border border-transparent px-4 py-1.5 text-sm hover:text-white ${
+                        className={`hover:nav-gradient relative border border-transparent px-4 py-2 text-sm hover:text-white ${
                           pathUrl === menuItem.path
                             ? "nav-gradient text-white"
                             : "text-white/80"
@@ -132,7 +132,7 @@ const Header = () => {
             </Menubar>
           </div>
 
-          <div className="relative ml-auto xl:hidden">
+          <div className="relative ml-auto shrink-0 xl:hidden">
             <button
               onClick={() => setNavigationOpen(!navigationOpen)}
               className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:bg-white/10"
