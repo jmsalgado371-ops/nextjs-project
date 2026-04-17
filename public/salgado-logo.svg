@@ -18,16 +18,15 @@
 
   <!-- White underlay behind text to keep contrast over mixed backgrounds -->
   <g fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-linecap="round" opacity="0.95">
-    <text x="200" y="185" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="1" stroke-width="7">JOS&#201; SALGADO</text>
-    <text x="200" y="215" font-size="14" text-anchor="middle" font-weight="400" letter-spacing="5" opacity="0.8" stroke-width="5">SOFTWARE DEVELOPER</text>
-    <circle cx="55" cy="176" r="7" />
-    <circle cx="345" cy="176" r="7" />
+    <text x="200" y="193" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="1" stroke-width="7">JOS&#201; SALGADO</text>
+    <circle cx="55" cy="184" r="7" />
+    <circle cx="345" cy="184" r="7" />
   </g>
 
   <g fill="#1A3A3A" font-family="system-ui, -apple-system, sans-serif">
-    <text x="200" y="185" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="1">JOS&#201; SALGADO</text>
-    <text x="200" y="215" font-size="14" text-anchor="middle" font-weight="400" letter-spacing="5" opacity="0.8">SOFTWARE DEVELOPER</text>
-    <circle cx="55" cy="176" r="3.5" />
-    <circle cx="345" cy="176" r="3.5" />
+    <text x="200" y="193" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="1">JOS&#201; SALGADO</text>
+    <text x="200" y="223" font-size="14" text-anchor="middle" font-weight="700" letter-spacing="5" opacity="0.9">SOFTWARE DEVELOPER</text>
+    <circle cx="55" cy="184" r="3.5" />
+    <circle cx="345" cy="184" r="3.5" />
   </g>
 </svg>
