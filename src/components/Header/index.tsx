@@ -67,13 +67,16 @@ const Header = () => {
         <div className="relative mx-auto flex w-full max-w-[1170px] items-center gap-4 px-4 sm:px-8 xl:gap-6 xl:px-0">
           {/* Logo - Far Left */}
           <div className="flex shrink-0 items-center">
-            <Link href="/">
+            <Link
+              href="/"
+              className="rounded-2xl border border-white/10 bg-white/[0.08] px-3 py-2 shadow-[0_10px_30px_rgba(5,8,20,0.28)] backdrop-blur-sm transition hover:bg-white/[0.12]"
+            >
               <Image
                 src={logo}
                 alt="Salgado Logo"
-                width={172}
-                height={42}
-                className="h-auto w-[138px] object-contain opacity-90 saturate-75 brightness-110 drop-shadow-[0_3px_14px_rgba(5,8,20,0.45)] sm:w-[154px] xl:w-[172px]"
+                width={196}
+                height={56}
+                className="h-auto w-[152px] object-contain brightness-[1.12] contrast-125 drop-shadow-[0_5px_18px_rgba(5,8,20,0.38)] sm:w-[172px] xl:w-[196px]"
                 priority
               />
             </Link>
@@ -81,13 +84,13 @@ const Header = () => {
 
           {/* Desktop navbar */}
           <div
-            className={`hidden flex-1 items-center justify-center xl:flex ${
+            className={`hidden flex-1 items-center justify-end xl:flex ${
               navigationOpen
                 ? "visible! relative mt-4 h-auto! max-h-[400px] overflow-y-scroll rounded-md bg-dark p-7.5 shadow-lg"
                 : ""
             }`}
           >
-            <Menubar className="flex w-full max-w-max items-center justify-center gap-1 border-none bg-transparent">
+            <Menubar className="flex w-full max-w-max items-center justify-end gap-1 border-none bg-transparent">
               {menuData.map((menuItem, key) => (
                 <MenubarMenu key={key}>
                   {menuItem.submenu ? (
