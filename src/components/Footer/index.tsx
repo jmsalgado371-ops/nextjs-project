@@ -3,7 +3,7 @@ import Link from "next/link";
 import FooterLinkList from "./FooterLinkList";
 import { companiesLink, productsLink, supportsLink } from "./linksData";
 
-const logo = "/salgado-logo.png";
+const logo = "/salgado-logo.svg";
 
 const Footer = () => {
   return (

@@ -11,7 +11,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-const logo = "/salgado-logo.png";
+const logo = "/salgado-logo.svg";
 import menuData from "./menuData";
 
 const hasActiveSubmenu = (submenu?: typeof menuData[number]["submenu"], pathUrl?: string) =>
