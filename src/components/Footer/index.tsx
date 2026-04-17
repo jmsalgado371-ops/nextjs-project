@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FooterLinkList from "./FooterLinkList";
 import { companiesLink, productsLink, supportsLink } from "./linksData";
+import badgesData from "../About/AboutSection/badgesData";
 
 const logo = "/salgado-logo.svg";
 
@@ -115,6 +116,26 @@ const Footer = () => {
               <p className="mt-5.5 font-medium">
                 AI Tool, LLC. All rights reserved.
               </p>
+
+              <div className="mt-8">
+                <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-300">Highlights</p>
+                <div className="grid grid-cols-3 gap-2 sm:max-w-[460px]">
+                  {badgesData.slice(0, 3).map((badge) => (
+                    <div
+                      key={`footer-${badge.id}`}
+                      className="overflow-hidden rounded-lg border border-white/10 bg-white/5 p-1.5"
+                    >
+                      <Image
+                        src={badge.image}
+                        alt={badge.name}
+                        width={180}
+                        height={96}
+                        className="h-auto w-full rounded object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="w-full max-w-[571px]">

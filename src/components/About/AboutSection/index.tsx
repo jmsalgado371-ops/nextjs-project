@@ -135,8 +135,17 @@ const AboutSection = () => {
                   className="flex transition-transform duration-300 ease-out"
                   style={{ transform: `translateX(-${activeSkillIndex * 100}%)` }}
                 >
-                  {technicalSkills.map((skill) => (
+                  {technicalSkills.map((skill, index) => (
                     <div key={skill.title} className="w-full flex-none">
+                      <div className="mb-3 overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2">
+                        <Image
+                          src={badgesData[index % badgesData.length].image}
+                          alt={badgesData[index % badgesData.length].name}
+                          width={420}
+                          height={220}
+                          className="h-auto w-full rounded-lg object-cover"
+                        />
+                      </div>
                       <p className="text-sm uppercase tracking-[0.2em] text-sky-300">{skill.title}</p>
                       <p className="mt-2 text-white/80">{skill.description}</p>
                     </div>
@@ -185,6 +194,15 @@ const AboutSection = () => {
                   key={badge.id}
                   className="rounded-xl border border-white/10 bg-black/20 p-4"
                 >
+                  <div className="mb-3 overflow-hidden rounded-lg border border-white/10 bg-white/5 p-2">
+                    <Image
+                      src={badge.image}
+                      alt={badge.name}
+                      width={420}
+                      height={220}
+                      className="h-auto w-full rounded-md object-cover"
+                    />
+                  </div>
                   <p className="text-sm font-semibold text-white">{badge.name}</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.18em] text-sky-300">
                     {badge.issuer}
