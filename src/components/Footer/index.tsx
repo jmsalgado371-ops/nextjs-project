@@ -28,7 +28,13 @@ const Footer = () => {
           <div className="flex flex-wrap justify-between">
             <div className="mb-10 w-full max-w-[520px]">
               <Link href="/" className="mb-8.5 inline-block">
-                <Image src={logo} alt="Logo" width={164} height={36} />
+                <Image
+                  src={logo}
+                  alt="Salgado Logo"
+                  width={164}
+                  height={36}
+                  className="h-auto w-[164px] object-contain opacity-95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.28)]"
+                />
               </Link>
 
               <p className="mb-12 xl:w-4/5">

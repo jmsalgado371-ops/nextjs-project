@@ -68,7 +68,14 @@ const Header = () => {
           {/* Logo - Far Left */}
           <div className="flex flex-shrink-0 items-center">
             <Link href="/">
-              <Image src={logo} alt="Logo" width={164} height={36} />
+              <Image
+                src={logo}
+                alt="Salgado Logo"
+                width={164}
+                height={36}
+                className="h-auto w-[164px] object-contain opacity-95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.28)]"
+                priority
+              />
             </Link>
           </div>
 
