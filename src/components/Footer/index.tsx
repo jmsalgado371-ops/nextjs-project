@@ -4,6 +4,17 @@ import badgesData from "../About/AboutSection/badgesData";
 
 const logo = "/salgado-logo.svg";
 
+const footerBadgeIds = [
+  "html-foundations",
+  "css-responsive",
+  "javascript-core",
+  "aws-solutions-architect",
+];
+
+const footerBadges = footerBadgeIds
+  .map((id) => badgesData.find((badge) => badge.id === id))
+  .filter((badge): badge is (typeof badgesData)[number] => Boolean(badge));
+
 const Footer = () => {
   return (
     <>
@@ -82,11 +93,11 @@ const Footer = () => {
 
               <div className="mt-8">
                 <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-300">Highlights</p>
-                <div className="grid max-w-[460px] grid-cols-2 gap-2 sm:grid-cols-3">
-                  {badgesData.slice(0, 3).map((badge) => (
+                <div className="mx-auto grid max-w-[460px] grid-cols-2 gap-2 sm:grid-cols-4">
+                  {footerBadges.map((badge) => (
                     <div
                       key={`footer-${badge.id}`}
-                      className="overflow-hidden rounded-lg border border-white/10 bg-white/5 p-1.5"
+                      className="overflow-hidden rounded-lg border border-white/10 bg-white p-1.5"
                     >
                       <Image
                         src={badge.image}
@@ -94,7 +105,7 @@ const Footer = () => {
                         width={180}
                         height={96}
                         unoptimized
-                        className="h-auto w-full rounded object-cover"
+                        className="h-auto w-full rounded object-contain"
                       />
                     </div>
                   ))}
