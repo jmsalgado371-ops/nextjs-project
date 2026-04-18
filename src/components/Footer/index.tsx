@@ -130,6 +130,7 @@ const Footer = () => {
                         alt={badge.name}
                         width={180}
                         height={96}
+                        unoptimized
                         className="h-auto w-full rounded object-cover"
                       />
                     </div>

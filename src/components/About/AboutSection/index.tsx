@@ -143,6 +143,7 @@ const AboutSection = () => {
                           alt={badgesData[index % badgesData.length].name}
                           width={420}
                           height={220}
+                          unoptimized
                           className="h-auto w-full rounded-lg object-cover"
                         />
                       </div>
@@ -200,6 +201,7 @@ const AboutSection = () => {
                       alt={badge.name}
                       width={420}
                       height={220}
+                      unoptimized
                       className="h-auto w-full rounded-md object-cover"
                     />
                   </div>
