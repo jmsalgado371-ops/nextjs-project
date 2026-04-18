@@ -64,7 +64,7 @@ const Header = () => {
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/20 to-transparent" />
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-[1170px] items-center gap-4 px-4 sm:px-8 xl:gap-6 xl:px-0">
+        <div className="relative mx-auto flex w-full max-w-[1170px] items-center gap-3 px-4 sm:gap-4 sm:px-8 xl:gap-6 xl:px-0">
           {/* Logo - Far Left */}
           <div className="flex shrink-0 items-center">
             <Link
@@ -135,7 +135,7 @@ const Header = () => {
             </Menubar>
           </div>
 
-          <div className="relative ml-auto shrink-0 xl:hidden">
+          <div className="relative z-20 ml-auto shrink-0 xl:hidden">
             <button
               onClick={() => setNavigationOpen(!navigationOpen)}
               className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:bg-white/10"
@@ -176,8 +176,9 @@ const Header = () => {
             </button>
 
             {navigationOpen && (
-              <div className="absolute right-0 top-full mt-4 w-[min(18rem,calc(100vw-2rem))] rounded-2xl border border-white/10 bg-dark/95 p-3 shadow-2xl backdrop-blur-xl">
-                <nav className="flex flex-col gap-1">
+              <div className="absolute left-0 right-0 top-full mt-3 w-[calc(100vw-2rem)] max-w-none sm:left-auto sm:right-0 sm:w-[min(22rem,calc(100vw-4rem))]">
+                <div className="max-h-[calc(100vh-8rem)] overflow-y-auto rounded-2xl border border-white/10 bg-dark/95 p-3 shadow-2xl backdrop-blur-xl">
+                  <nav className="flex flex-col gap-1">
                   {menuData.map((menuItem) => {
                     const isActive = pathUrl === menuItem.path || hasActiveSubmenu(menuItem.submenu, pathUrl);
                     const submenuOpen = openSubmenuId === menuItem.id;
@@ -237,7 +238,8 @@ const Header = () => {
                       </Link>
                     );
                   })}
-                </nav>
+                  </nav>
+                </div>
               </div>
             )}
           </div>

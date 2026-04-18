@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import FooterLinkList from "./FooterLinkList";
-import { companiesLink, productsLink, supportsLink } from "./linksData";
 import badgesData from "../About/AboutSection/badgesData";
 
 const logo = "/salgado-logo.svg";
@@ -26,8 +24,8 @@ const Footer = () => {
         <div className="relative mx-auto max-w-[1170px] px-4 pt-17.5 sm:px-8 xl:px-0">
           <div className="footer-divider-gradient absolute left-0 top-0 h-[1px] w-full"></div>
 
-          <div className="flex flex-wrap justify-between">
-            <div className="mb-10 w-full max-w-[520px]">
+          <div className="flex justify-center">
+            <div className="w-full max-w-[520px] text-center">
               <Link href="/" className="mb-8.5 inline-block">
                 <Image
                   src={logo}
@@ -38,42 +36,38 @@ const Footer = () => {
                 />
               </Link>
 
-              <p className="mb-12 xl:w-4/5">
-                Build SaaS AI applications using OpenAI and Next.js, this kit
-                comes with pre-configured and pre-built examples, making it
-                easier to quickly kickstart your AI startup.
-              </p>
-
-              <div className="flex items-center gap-5">
+              <div className="mb-6 flex items-center justify-center gap-6">
                 <a
-                  href="#"
-                  aria-label="facebook"
+                  href="mailto:jmsalgado371@gmail.com"
+                  aria-label="Email"
                   className="duration-300 ease-in hover:text-white"
                 >
                   <svg
                     className="fill-current"
-                    width="24"
-                    height="24"
+                    width="22"
+                    height="22"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M13 21.9506C18.0533 21.4489 22 17.1853 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 16.8379 5.43552 20.8734 10 21.8V16H7V13H10V9.79586C10 7.47449 11.9695 5.64064 14.285 5.80603L17 5.99996V8.99996H15C13.8954 8.99996 13 9.89539 13 11V13H17L16 16H13V21.9506Z"
+                      d="M2 6.75C2 5.7835 2.7835 5 3.75 5H20.25C21.2165 5 22 5.7835 22 6.75V17.25C22 18.2165 21.2165 19 20.25 19H3.75C2.7835 19 2 18.2165 2 17.25V6.75ZM4.9 7L12 12.1125L19.1 7H4.9ZM20 8.2875L12.5105 13.6785C12.2071 13.8967 11.7929 13.8967 11.4895 13.6785L4 8.2875V17H20V8.2875Z"
                       fill=""
                     />
                   </svg>
                 </a>
 
                 <a
-                  href="#"
-                  aria-label="twitter"
+                  href="https://github.com/jmsalgado371-ops"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
                   className="duration-300 ease-in hover:text-white"
                 >
                   <svg
                     className="fill-current"
-                    width="24"
-                    height="24"
+                    width="22"
+                    height="22"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -84,42 +78,11 @@ const Footer = () => {
                     />
                   </svg>
                 </a>
-
-                <a
-                  href="#"
-                  aria-label="github"
-                  className="duration-300 ease-in hover:text-white"
-                >
-                  <svg
-                    className="fill-current"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_368_11839)">
-                      <path
-                        d="M12 0.674805C5.625 0.674805 0.375 5.8498 0.375 12.2998C0.375 17.3998 3.7125 21.7498 8.3625 23.3248C8.9625 23.4373 9.15 23.0623 9.15 22.7998C9.15 22.5373 9.15 21.7873 9.1125 20.7748C5.8875 21.5248 5.2125 19.1998 5.2125 19.1998C4.6875 17.8873 3.9 17.5123 3.9 17.5123C2.85 16.7623 3.9375 16.7623 3.9375 16.7623C5.1 16.7998 5.7375 17.9623 5.7375 17.9623C6.75 19.7623 8.475 19.2373 9.1125 18.8998C9.225 18.1498 9.525 17.6248 9.8625 17.3248C7.3125 17.0623 4.575 16.0498 4.575 11.6248C4.575 10.3498 5.0625 9.3373 5.775 8.5498C5.6625 8.2873 5.25 7.0873 5.8875 5.4748C5.8875 5.4748 6.9 5.1748 9.1125 6.6748C10.05 6.4123 11.025 6.2623 12.0375 6.2623C13.05 6.2623 14.0625 6.3748 14.9625 6.6748C17.175 5.2123 18.15 5.4748 18.15 5.4748C18.7875 7.0498 18.4125 8.2873 18.2625 8.5498C19.0125 9.3373 19.4625 10.3873 19.4625 11.6248C19.4625 16.0498 16.725 17.0623 14.175 17.3248C14.5875 17.6998 14.9625 18.4498 14.9625 19.4998C14.9625 21.0748 14.925 22.3123 14.925 22.6873C14.925 22.9873 15.15 23.3248 15.7125 23.2123C20.2875 21.6748 23.625 17.3623 23.625 12.2248C23.5875 5.8498 18.375 0.674805 12 0.674805Z"
-                        fill=""
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_368_11839">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </a>
               </div>
-
-              <p className="mt-5.5 font-medium">
-                AI Tool, LLC. All rights reserved.
-              </p>
 
               <div className="mt-8">
                 <p className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-300">Highlights</p>
-                <div className="grid grid-cols-3 gap-2 sm:max-w-[460px]">
+                <div className="grid max-w-[460px] grid-cols-2 gap-2 sm:grid-cols-3">
                   {badgesData.slice(0, 3).map((badge) => (
                     <div
                       key={`footer-${badge.id}`}
@@ -136,16 +99,6 @@ const Footer = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
-
-            <div className="w-full max-w-[571px]">
-              <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
-                <FooterLinkList title="Products" links={productsLink} />
-
-                <FooterLinkList title="Company" links={companiesLink} />
-
-                <FooterLinkList title="Support" links={supportsLink} />
               </div>
             </div>
           </div>

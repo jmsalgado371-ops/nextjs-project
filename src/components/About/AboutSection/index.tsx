@@ -120,8 +120,8 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-2">
-          <div className="rounded-[30px] border border-white/10 bg-white/5 p-6 sm:p-7 lg:p-8">
+        <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="rounded-[30px] border border-white/10 bg-white/5 p-5 sm:p-7 lg:p-8">
             <div className="mb-6">
               <h3 className="text-2xl font-semibold text-white">Technical Skill Highlights</h3>
               <p className="mt-2 text-white/70">
@@ -129,41 +129,41 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <div className="mb-6 sm:hidden">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-5">
+            <div className="mb-6">
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-3">
                 <div
-                  className="flex transition-transform duration-300 ease-out"
+                  className="flex min-w-0 transition-transform duration-300 ease-out"
                   style={{ transform: `translateX(-${activeSkillIndex * 100}%)` }}
                 >
                   {technicalSkills.map((skill, index) => (
-                    <div key={skill.title} className="w-full flex-none">
-                      <div className="mb-3 overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2">
+                    <div key={skill.title} className="w-full min-w-0 flex-none">
+                      <div className="mb-3 overflow-hidden rounded-xl border border-white/10 bg-white/5 p-1.5 sm:p-2">
                         <Image
                           src={badgesData[index % badgesData.length].image}
                           alt={badgesData[index % badgesData.length].name}
                           width={420}
                           height={220}
                           unoptimized
-                          className="h-auto w-full rounded-lg object-cover"
+                          className="h-[140px] w-full rounded-lg object-contain sm:h-[190px]"
                         />
                       </div>
-                      <p className="text-sm uppercase tracking-[0.2em] text-sky-300">{skill.title}</p>
-                      <p className="mt-2 text-white/80">{skill.description}</p>
+                      <p className="text-xs uppercase tracking-[0.16em] text-sky-300">{skill.title}</p>
+                      <p className="mt-2 text-sm text-white/80 sm:text-base">{skill.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-4 flex items-center justify-between">
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
                 <button
                   type="button"
                   onClick={showPreviousSkill}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white transition hover:bg-white/10"
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white transition hover:bg-white/10 sm:text-sm"
                   aria-label="Show previous technical skill"
                 >
                   Prev
                 </button>
-                <div className="flex items-center gap-2">
+                <div className="order-3 flex w-full items-center justify-center gap-2">
                   {technicalSkills.map((skill, index) => (
                     <button
                       key={skill.title}
@@ -181,36 +181,12 @@ const AboutSection = () => {
                 <button
                   type="button"
                   onClick={showNextSkill}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white transition hover:bg-white/10"
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white transition hover:bg-white/10 sm:text-sm"
                   aria-label="Show next technical skill"
                 >
                   Next
                 </button>
               </div>
-            </div>
-
-            <div className="grid gap-3 max-sm:hidden sm:grid-cols-2">
-              {badgesData.map((badge) => (
-                <article
-                  key={badge.id}
-                  className="rounded-xl border border-white/10 bg-black/20 p-4"
-                >
-                  <div className="mb-3 overflow-hidden rounded-lg border border-white/10 bg-white/5 p-2">
-                    <Image
-                      src={badge.image}
-                      alt={badge.name}
-                      width={420}
-                      height={220}
-                      unoptimized
-                      className="h-auto w-full rounded-md object-cover"
-                    />
-                  </div>
-                  <p className="text-sm font-semibold text-white">{badge.name}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-sky-300">
-                    {badge.issuer}
-                  </p>
-                </article>
-              ))}
             </div>
 
             <div className="mt-8 border-t border-white/10 pt-6">
@@ -228,7 +204,7 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="rounded-[30px] border border-white/10 bg-white/5 p-8">
+          <div className="rounded-[30px] border border-white/10 bg-white/5 p-6 sm:p-8">
             <h3 className="mb-6 text-2xl font-semibold text-white">Selected Experience</h3>
             <div className="space-y-6 text-white/80">
               <div>
@@ -260,8 +236,8 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-2">
-          <div className="rounded-[30px] border border-white/10 bg-white/5 p-8">
+        <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="rounded-[30px] border border-white/10 bg-white/5 p-6 sm:p-8">
             <h3 className="mb-6 text-2xl font-semibold text-white">Featured Projects</h3>
             <div className="space-y-6 text-white/80">
               <div>
@@ -282,7 +258,7 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="rounded-[30px] border border-white/10 bg-white/5 p-8">
+          <div className="rounded-[30px] border border-white/10 bg-white/5 p-6 sm:p-8">
             <h3 className="mb-6 text-2xl font-semibold text-white">Contact</h3>
             <div className="space-y-5 text-white/80">
               <div id="contact">

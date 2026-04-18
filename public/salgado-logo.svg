@@ -8,7 +8,7 @@
     <path d="M225 55 L200 55 L200 80 L225 80 L225 105 L200 105" stroke-width="12" stroke-linejoin="bevel" />
   </g>
 
-  <g fill="none" stroke="#1A3A3A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#3B82F6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="200" cy="80" r="70" />
     <path d="M152 74 L144 80 L152 86" stroke-width="5" />
     <path d="M248 74 L256 80 L248 86" stroke-width="5" />
@@ -23,7 +23,7 @@
     <circle cx="345" cy="184" r="7" />
   </g>
 
-  <g fill="#1A3A3A" font-family="system-ui, -apple-system, sans-serif">
+  <g fill="#93C5FD" font-family="system-ui, -apple-system, sans-serif">
     <text x="200" y="193" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="1">JOS&#201; SALGADO</text>
     <circle cx="55" cy="184" r="3.5" />
     <circle cx="345" cy="184" r="3.5" />
@@ -32,7 +32,7 @@
   <text
     x="200"
     y="223"
-    fill="#F8FAFC"
+    fill="#DBEAFE"
     font-family="system-ui, -apple-system, sans-serif"
     font-size="15"
     font-weight="800"
