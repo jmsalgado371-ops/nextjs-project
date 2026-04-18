@@ -135,7 +135,7 @@ const Header = () => {
             </Menubar>
           </div>
 
-          <div className="relative z-20 ml-auto shrink-0 xl:hidden">
+          <div className="relative z-30 ml-auto shrink-0 xl:hidden">
             <button
               onClick={() => setNavigationOpen(!navigationOpen)}
               className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:bg-white/10"
@@ -176,71 +176,77 @@ const Header = () => {
             </button>
 
             {navigationOpen && (
-              <div className="absolute left-0 right-0 top-full mt-3 w-[calc(100vw-2rem)] max-w-none sm:left-auto sm:right-0 sm:w-[min(22rem,calc(100vw-4rem))]">
-                <div className="max-h-[calc(100vh-8rem)] overflow-y-auto rounded-2xl border border-white/10 bg-dark/95 p-3 shadow-2xl backdrop-blur-xl">
+              <>
+                <div
+                  className="fixed inset-0 z-[1005] bg-black/55 backdrop-blur-[2px] xl:hidden"
+                  onClick={() => setNavigationOpen(false)}
+                  aria-hidden="true"
+                />
+
+                <aside className="fixed right-0 top-0 z-[1010] h-screen w-[min(21rem,86vw)] overflow-y-auto border-l border-white/10 bg-dark/95 px-3 pb-6 pt-20 shadow-2xl backdrop-blur-xl xl:hidden">
                   <nav className="flex flex-col gap-1">
-                  {menuData.map((menuItem) => {
-                    const isActive = pathUrl === menuItem.path || hasActiveSubmenu(menuItem.submenu, pathUrl);
-                    const submenuOpen = openSubmenuId === menuItem.id;
+                    {menuData.map((menuItem) => {
+                      const isActive = pathUrl === menuItem.path || hasActiveSubmenu(menuItem.submenu, pathUrl);
+                      const submenuOpen = openSubmenuId === menuItem.id;
 
-                    if (menuItem.submenu) {
-                      return (
-                        <div key={menuItem.id} className="rounded-xl border border-white/8 bg-white/[0.03]">
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setOpenSubmenuId(submenuOpen ? null : menuItem.id)
-                            }
-                            className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm transition hover:bg-white/5 ${
-                              isActive ? "text-white" : "text-white/80"
-                            }`}
-                          >
-                            <span>{menuItem.title}</span>
-                            <svg
-                              className={`h-3 w-3 fill-current transition ${
-                                submenuOpen ? "rotate-180" : ""
+                      if (menuItem.submenu) {
+                        return (
+                          <div key={menuItem.id} className="rounded-xl border border-white/8 bg-white/[0.03]">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setOpenSubmenuId(submenuOpen ? null : menuItem.id)
+                              }
+                              className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm transition hover:bg-white/5 ${
+                                isActive ? "text-white" : "text-white/80"
                               }`}
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
                             >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </button>
+                              <span>{menuItem.title}</span>
+                              <svg
+                                className={`h-3 w-3 fill-current transition ${
+                                  submenuOpen ? "rotate-180" : ""
+                                }`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                              >
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                              </svg>
+                            </button>
 
-                          {submenuOpen && (
-                            <div className="flex flex-col gap-1 px-2 pb-2">
-                              {menuItem.submenu.map((subItem) => (
-                                <Link
-                                  key={subItem.id}
-                                  href={subItem.path || "#"}
-                                  className={`rounded-lg px-3 py-2 text-sm transition hover:bg-white/5 hover:text-white ${
-                                    pathUrl === subItem.path ? "text-white" : "text-white/70"
-                                  }`}
-                                >
-                                  {subItem.title}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
+                            {submenuOpen && (
+                              <div className="flex flex-col gap-1 px-2 pb-2">
+                                {menuItem.submenu.map((subItem) => (
+                                  <Link
+                                    key={subItem.id}
+                                    href={subItem.path || "#"}
+                                    className={`rounded-lg px-3 py-2 text-sm transition hover:bg-white/5 hover:text-white ${
+                                      pathUrl === subItem.path ? "text-white" : "text-white/70"
+                                    }`}
+                                  >
+                                    {subItem.title}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      }
+
+                      return (
+                        <Link
+                          key={menuItem.id}
+                          href={menuItem.path || "#"}
+                          className={`rounded-xl px-4 py-3 text-sm transition hover:bg-white/5 hover:text-white ${
+                            isActive ? "nav-gradient text-white" : "text-white/80"
+                          }`}
+                        >
+                          {menuItem.title}
+                        </Link>
                       );
-                    }
-
-                    return (
-                      <Link
-                        key={menuItem.id}
-                        href={menuItem.path || "#"}
-                        className={`rounded-xl px-4 py-3 text-sm transition hover:bg-white/5 hover:text-white ${
-                          isActive ? "nav-gradient text-white" : "text-white/80"
-                        }`}
-                      >
-                        {menuItem.title}
-                      </Link>
-                    );
-                  })}
+                    })}
                   </nav>
-                </div>
-              </div>
+                </aside>
+              </>
             )}
           </div>
         </div>
